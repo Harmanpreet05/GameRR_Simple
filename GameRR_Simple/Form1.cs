@@ -13,7 +13,7 @@ namespace GameRR_Simple
 {
     public partial class Form1 : Form
     {
-        Game Nishantobj = new Game();
+        Game Gameobj = new Game();
         public Form1()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace GameRR_Simple
             Spin.Enabled = true;
 
             //run the function from the object of the class Shooting to run the logic of shooting
-            Nishantobj.LoadingFunc();
+            Gameobj.LoadingFunc();
         }
         
 
@@ -38,7 +38,7 @@ namespace GameRR_Simple
             pictureBox1.Image = GameRR_Simple.Resource1.spin;
             SoundPlayer sc = new SoundPlayer(GameRR_Simple.Resource1.Trriger);
             sc.Play();
-            Nishantobj.SpinFunc();//Calling the spin function to act
+            Gameobj.SpinFunc();//Calling the spin function to act
             ShootAt.Enabled = true;
             ShootHd.Enabled = true;
         }
@@ -49,7 +49,7 @@ namespace GameRR_Simple
             pictureBox1.Image = GameRR_Simple.Resource1.try_again;
             SoundPlayer sc = new SoundPlayer(GameRR_Simple.Resource1.Reload);
             sc.Play();
-            int chances = Nishantobj.ShootingAtHead();//calling the shootingAwayFunc
+            int chances = Gameobj.ShootingAtHead();//calling the shootingAwayFunc
         }
 
         private void ShootHd_Click(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace GameRR_Simple
             pictureBox1.Image = GameRR_Simple.Resource1.shot;
             SoundPlayer sc = new SoundPlayer(GameRR_Simple.Resource1.ShotGu);
             sc.Play();
-            int chancesAway = Nishantobj.ShootingAwayFunc();//calling the ShootingAwayFunc2 
+            int chancesAway = Gameobj.ShootingAwayFunc();//calling the ShootingAwayFunc2 
         }
 
         private void PLyAgn_Click(object sender, EventArgs e)
